@@ -3,8 +3,7 @@ import copy
 
 logging.basicConfig(level=logging.DEBUG)
 
-# pieces
-XX, OO = 'X', 'O'
+from config import XX, OO
 
 def validate_name(name):
     if name not in (XX, OO):
