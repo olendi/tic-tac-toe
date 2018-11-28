@@ -3,13 +3,15 @@ import board
 import logging
 import os
 
+from config import XX, OO
+
 logging.basicConfig(level=logging.DEBUG)
 
 SQUARE_COLOR = '#58ae8b'
 
 SQUARE_SIZE = 200
 
-TEXT_FACTOR = 1 - max(len(board.XX), len(board.OO)) / 7.0
+TEXT_FACTOR = 1 - max(len(XX), len(OO)) / 7.0
 
 MYDIR = os.path.dirname(os.path.realpath(__file__))
 
@@ -65,9 +67,9 @@ class TicTacToe(tk.Frame):
     def get_text_and_color(self, piece):
         text = piece
         if not self.sides_normal:
-            text = board.OO if piece == board.XX else board.XX
+            text = OO if piece == XX else XX
 
-        color = 'blue' if text == board.XX else 'red'
+        color = 'blue' if text == XX else 'red'
 
         return (text, color)
 
